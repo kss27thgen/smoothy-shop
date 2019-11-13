@@ -12,8 +12,9 @@
           <i class="material-icons delete" @click="deleteIngredient(ing)">delete</i>
         </div>
         <div class="field add-ingredient">
-          <label for="add-ingredient">Add an ingredient (hit [TAB] key to put this ingredient into the cup!):</label>
-          <input type="text" name="add-ingredient" @keydown.tab.prevent="addIngredient" v-model="another">
+          <label for="add-ingredient">Add an ingredient :</label>
+          <input type="text" name="add-ingredient"  v-model="another" class="input">
+          <button class="btn add-btn" @click="addIngredient">add</button>
         </div>
         <div class="field center-align">
           <p class="red-text" v-if="feedback">{{ feedback }}</p>
@@ -109,5 +110,11 @@ export default {
   font-size: 1.4em;
   cursor: pointer;
 }
-
+.input {
+  position: relative;
+}
+.add-btn {
+  position: absolute;
+  right: 0;
+}
 </style>
